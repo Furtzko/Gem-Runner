@@ -5,6 +5,7 @@ using UnityEngine;
 public class Gold : BaseCollectible
 {
     private Animator animator;
+    [SerializeField] private ParticleSystem particle;
     public override CollectibleType collectibleType => CollectibleType.Gold;
 
     private void Start()
@@ -16,7 +17,7 @@ public class Gold : BaseCollectible
     {
         base.GetCollected();
         //TODO: özelleştir
-
+        particle.Play();
         animator.SetTrigger("isCollected");
     }
 }

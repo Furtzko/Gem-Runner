@@ -11,7 +11,7 @@ public class GameManager : BaseSingleton<GameManager>
     public int CurrentStackAmount;
     public int MaxStackAmount = 20;
     public float CurrentStackPercentage;
-    private bool isStackFull = false;
+    public bool isStackFull = false;
     public int UpgradePrice;
 
     private int HighScore;

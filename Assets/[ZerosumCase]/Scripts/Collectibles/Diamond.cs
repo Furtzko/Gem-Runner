@@ -5,6 +5,7 @@ using UnityEngine;
 public class Diamond : BaseCollectible
 {
     private Animator animator;
+    [SerializeField] private ParticleSystem particle;
     public override CollectibleType collectibleType => CollectibleType.Diamond;
 
     private void Start()
@@ -16,13 +17,7 @@ public class Diamond : BaseCollectible
     {
         base.GetCollected();
         //TODO: özelleştir.
-
-        //GameManager.Instance.CurrentStackAmount++;
-
-        //float currentPercentage = (float)GameManager.Instance.CurrentStackAmount / (float)GameManager.Instance.MaxStackAmount;
-
-        //EventManager._onStackValueChanged(currentPercentage);
-
+        particle.Play();
         animator.SetTrigger("isCollected");
     }
 

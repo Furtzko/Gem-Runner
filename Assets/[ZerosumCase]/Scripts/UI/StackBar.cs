@@ -7,6 +7,7 @@ public class StackBar : MonoBehaviour
 {
     [SerializeField] private Image foregroundImage;
     [SerializeField] private float updateSpeed = 0.2f;
+    [SerializeField] private ParticleSystem glowParticle;
 
     private void Awake()
     {
@@ -36,6 +37,15 @@ public class StackBar : MonoBehaviour
         }
 
         foregroundImage.fillAmount = percentage;
+
+        if (GameManager.Instance.isStackFull)
+        {
+            glowParticle.Play();
+        }
+        else
+        {
+            glowParticle.Stop();
+        }
     }
 
     private void LateUpdate()

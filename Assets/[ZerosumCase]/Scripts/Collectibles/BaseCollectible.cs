@@ -19,6 +19,7 @@ public abstract class BaseCollectible : MonoBehaviour, ICollectible
     //AnimEvent ile kullanılıyor.
     private void DestroyObj()
     {
-        Destroy(gameObject);
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        //Destroy(gameObject);
     }
 }

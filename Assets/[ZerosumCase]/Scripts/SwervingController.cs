@@ -7,7 +7,7 @@ public class SwervingController : MonoBehaviour
     private SwerveInput _swerveInput;
     [SerializeField] private float swerveSpeed = 0.5f;
     [SerializeField] private float maxSwerveAmount = 1f;
-    [SerializeField] private float forwardSpeed = 3.5f;
+    [SerializeField] private float forwardSpeed = 5f;
 
     private void Awake()
     {
@@ -37,11 +37,11 @@ public class SwervingController : MonoBehaviour
 
     private void OnStackIsFull()
     {
-        forwardSpeed = 5f;
+        forwardSpeed = 8f;
     }
 
     private void OnStackIsNotFull()
     {
-        forwardSpeed = 3.5f;
+        forwardSpeed = 5f;
     }
 }
