@@ -14,13 +14,10 @@ public class TapToStart : MonoBehaviour, IPointerDownHandler
     private void Start()
     {
         StartCoroutine(UpdateUI());
-
     }
-
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("onpointerdown");
         EventManager._onStateChanged(GameState.InGame);
     }
 

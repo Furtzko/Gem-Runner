@@ -14,7 +14,6 @@ public class GameManager : BaseSingleton<GameManager>
     public bool isStackFull = false;
     public int UpgradePrice;
 
-    private int HighScore;
     public int CurrentLevel;
 
     void Awake()
@@ -51,8 +50,6 @@ public class GameManager : BaseSingleton<GameManager>
             case GameState.TapToPlay:
                 InitLevel();
                 break;
-            case GameState.InGame:
-                break;
             case GameState.LevelEnd:
                 SaveLevelEndMetrics();
                 break;
@@ -76,7 +73,6 @@ public class GameManager : BaseSingleton<GameManager>
         CurrentStackAmount = StackAmountOnStart;
 
         UpdateStackValueBy(0);
-
 
         UpgradePrice = PlayerPrefs.GetInt("UpgradePrice");
         if(UpgradePrice == 0)

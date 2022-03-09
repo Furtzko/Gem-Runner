@@ -29,12 +29,7 @@ public class InGame : MonoBehaviour
     {
         if (type.Equals(CollectibleType.Gold))
         {
-            StartCoroutine(UpdateCurrencyUI());
-            
-        }
-        else
-        {
-
+            StartCoroutine(UpdateCurrencyUI());   
         }
     }
 

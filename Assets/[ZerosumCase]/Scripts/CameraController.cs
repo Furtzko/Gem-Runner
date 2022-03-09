@@ -9,7 +9,6 @@ public class CameraController : MonoBehaviour
     private Vector3 newPosition;
     [SerializeField] private float smoothTime = 2f;
     private bool isLevelEnd = false;
-    private Quaternion qTo;
 
     void Awake()
     {
@@ -35,9 +34,11 @@ public class CameraController : MonoBehaviour
         }
         else
         {
+            //Level sonu kamera posizyonu.
             newPosition = new Vector3(target.position.x, target.position.y + 4f, target.position.z + 5f);
             transform.position = Vector3.Slerp(transform.position, newPosition, 0.5f * Time.deltaTime);
 
+            //Character'e doğru smooth rotation.
             Quaternion OriginalRot = transform.rotation;
             transform.LookAt(target.position + Vector3.up * 2f);
             Quaternion NewRot = transform.rotation;

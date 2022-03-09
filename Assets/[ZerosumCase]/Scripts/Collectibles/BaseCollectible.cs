@@ -20,6 +20,7 @@ public abstract class BaseCollectible : MonoBehaviour, ICollectible
     private void DestroyObj()
     {
         gameObject.GetComponent<MeshRenderer>().enabled = false;
-        //Destroy(gameObject);
+        Destroy(gameObject,1);
+
     }
 }

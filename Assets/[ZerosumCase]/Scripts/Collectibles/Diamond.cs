@@ -16,7 +16,6 @@ public class Diamond : BaseCollectible
     public override void GetCollected()
     {
         base.GetCollected();
-        //TODO: özelleştir.
         particle.Play();
         animator.SetTrigger("isCollected");
     }
